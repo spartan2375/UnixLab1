@@ -1,0 +1,9 @@
+1. I think the meta characters fail because the shell isn't interpretting
+   the characters as redirects as a fully flushed out shell like bash would.
+   It seems like the shell is interpretting them as files, which don't exist.
+
+2. I think . and .. are standardized "macros" on linux, whereas the others are not.
+
+3. find expects an expression as an argument, and it parses the argument as an expression.
+   Our shell expects file names, not expressions, so it fails to parse the expressions and
+   complains that the file we are passing as an argument does not exist.
